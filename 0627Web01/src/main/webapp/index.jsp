@@ -19,6 +19,7 @@
 	<%
 		}
 	%> --%>
-	<a href="login.jsp">로그인</a>
+	<a href="login_booot.jsp">로그인</a>
+	<a href="join.jsp">회원가입</a>
 </body>
 </html>
