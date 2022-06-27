@@ -76,7 +76,7 @@
 <body class="text-center">
 
 	<main class="form-signin w-100 m-auto">
-		<form action="loginAction" method="POST">
+		<form action="loginAction.jsp" method="POST">
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>
 
 			<div class="form-floating">

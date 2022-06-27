@@ -19,7 +19,7 @@ public class UserDAO {
 			String dbId = "root";
 			String dbPassword = "2155";
 			
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbId, dbPassword);
 			
 		}catch(Exception e) {
@@ -43,7 +43,6 @@ public class UserDAO {
 				} else {
 					return 0; // 로그인 실패
 				}
-				
 			}
 			return -1; // 아이디 없음
 		} catch(Exception e) {
