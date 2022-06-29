@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 //Data Access Object = 데이터에 접근하는 역할을 맡은 객체
 //ctrl shift o : 자동 import     alt shift s : source
@@ -26,7 +27,7 @@ public class UserDAO {
 			conn = DriverManager.getConnection(dbURL, dbId, dbPassword);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	//로그인 기능 수행 함수. 로그인 화면에서 유저가 아이디 비번을 치고 밑의 로그인 버튼을 눌렸을때 실행
@@ -39,7 +40,7 @@ public class UserDAO {
 			pstmt.setString(1, userID);	//첫번째 물음표에 userID값 대입
 			//프로그래밍 언어에서 인덱스는 0부터 시작이지만 쿼리에서는 1부터 시작이다.
 			rs = pstmt.executeQuery();	//쿼리실행후 결과 받기
-			System.out.println("쿼리 실행결과 : "+rs);
+			System.out.println("로그인 쿼리 실행결과 : "+rs);
 			if(rs.next()) {	//결과의 리스트를 받았는데 다음행의 데이터가 있으면
 				if(rs.getString(1).equals(userPassword)) {
 					//남은것의 첫번째의 값이 login함수를 호출할때 전달받은 비밀번호와 같은지 검사
@@ -52,7 +53,7 @@ public class UserDAO {
 					
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 		return -2;	//데이터베이스 오류
 	}
 	
@@ -73,7 +74,7 @@ public class UserDAO {
 			return pstmt.executeUpdate();	//정상이면1
 		} catch (Exception e) {
 			e.printStackTrace();	//중복발생이나 어떤이유로 예외가 발생하면
-		}
+		} 
 		return -1;	//중복발생
 	}
 }
